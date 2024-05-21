@@ -24,7 +24,7 @@ func helloMessageHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", helloHandler)
-	http.HandleFunc("/info", helloMessageHandler)
+	http.HandleFunc("/hello", helloMessageHandler)
 
 	addr := ":8080"
 
