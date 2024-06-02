@@ -4,20 +4,21 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"cloud-api/models"
+	"cloud-computing-api/models"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "cloud-api. This is the root path\n\n")
-	fmt.Fprintln(w, "http://localhost:8080/hello")
-	fmt.Fprintln(w, "http://localhost:8080/world")
+	fmt.Fprint(w, " >> cloud-computing-api. \n >> This is the root path\n >> Running in alternative instance\n\n")
+	fmt.Fprintln(w, " ==============================")
+	fmt.Fprintln(w, " $$ http://localhost:8080/hello")
+	fmt.Fprintln(w, " $$ http://localhost:8080/world")
 }
 
 func helloMessageHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	message := models.Hello{
-		Message: "Hello",
+		Message: "Hello $ Message from alternative instance",
 	}
 
 	json.NewEncoder(w).Encode(message)
@@ -27,7 +28,7 @@ func worldMessageHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	message := models.Hello{
-		Message: "World",
+		Message: "World $ Message from alternative instance",
 	}
 
 	json.NewEncoder(w).Encode(message)
