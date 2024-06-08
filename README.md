@@ -1,4 +1,4 @@
-# go-loadbalancer-service
+# go-api-loadbalancer
 
 This repository contains the codebase for images that I have pushed to Docker Hub as my submission for a cloud computing course.
 
